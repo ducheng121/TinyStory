@@ -213,7 +213,7 @@ enum StoreError: LocalizedError {
     var errorDescription: String? { "暂时无法读取故事进度。原有数据已保留，请稍后重试。" }
 }
 struct StoryStore {
-    static let group = "group.com.miao.microstoryvalidation"
+    static let group = "group.com.ducheng.story"
     static func directory() throws -> URL {
         #if os(macOS)
         if let path = ProcessInfo.processInfo.environment["MICROSTORY_TEST_DIRECTORY"] { return URL(fileURLWithPath: path) }
