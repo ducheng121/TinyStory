@@ -19,7 +19,9 @@ struct Story: Identifiable {
 }
 
 // Branches diverge at each decision and converge only where the story explicitly reconnects.
+// 每次选择产生分支，只在故事明确设置的衔接处汇合。
 // Each row is: prose, option A, option B. Endings are title and prose.
+// 每行依次为正文、选项A、选项B；结局数据依次为标题和正文。
 enum StoryCatalog {
     static func make(_ id: String, _ title: String, _ summary: String, _ rows: [[String]], _ endings: [[String]]) -> Story {
         let ids = ["start", "s2a", "s2b", "s3a", "s3b", "s4a", "s4b"]
@@ -78,6 +80,7 @@ enum StoryCatalog {
         ], [["天空的路标","云上多了一只风筝的形状。你们约定每年在这里见面，抬头就能找到那段不再失约的时光。"],["重新出发","你把线轴装进行囊，和朋友走向车站。云洞被晨光轻轻补上，未完成的愿望终于有了下一页。"]])
     ]
     // Edition 2 keeps the first choice through to the final decision and outcome.
+    // 第二版让第一次选择持续影响最后的决定和结局。
     static let all: [Story] = legacy.map { original in
         let branch: [[String]]
         let endings: [[String]]
@@ -108,6 +111,7 @@ enum StoryCatalog {
         for prefix in ["a-", "b-"] {
             for old in original.nodes where old.id != "start" && old.endingTitle == nil {
                 // Only the first-choice-compatible second node is reachable.
+                // 第二个节点只能沿第一次选择对应的分支到达。
                 if old.id == (prefix == "a-" ? "s2b" : "s2a") { continue }
                 let replacement = prefix == "b-" && old.id.hasPrefix("s4") ? branch[old.id == "s4a" ? 0 : 1] : nil
                 let options = old.options.enumerated().map { i, option in
@@ -120,7 +124,29 @@ enum StoryCatalog {
         nodes += original.endingNodes
         nodes += endings.enumerated().map { i, row in StoryNode(id: i == 0 ? "endC" : "endD", text: row[1], options: [], endingTitle: row[0]) }
         return Story(id: original.id, title: original.title, summary: original.summary, nodes: nodes)
-    }
+    } + [rainScore]
+    // A hand-authored mystery: evidence routes and witness routes can corroborate
+    // each other; a correct guess alone does not unlock the fully proven ending.
+    // 手写探案分支：物证与证词可以相互印证，仅猜对答案不能解锁证据完整的结局。
+    static let rainScore = Story(id: "rain-score", title: "雨夜失踪的曲谱",
+        summary: "茶馆打烊前，手写曲谱不见了。窗边水迹与一只蓝铁盒，谁能解释？", nodes: [
+        StoryNode(id: "start", text: "暴雨夜，茶馆的手写曲谱不见了。店主阿岚说送货员小周刚走，窗边还有水迹。你先查哪里？", options: [StoryOption(title: "查看窗台", next: "window"), StoryOption(title: "询问客人", next: "witness")]),
+        StoryNode(id: "window", text: "外窗台湿透，内侧积灰却没有脚印。曲谱原处留着一根蓝布线，柜台上恰有一块蓝布。", options: [StoryOption(title: "核对蓝布", next: "cloth"), StoryOption(title: "追问小周", next: "courier")]),
+        StoryNode(id: "witness", text: "客人说小周离开时提着纸箱，却没看见曲谱。他还记得停电前，阿岚抱着蓝铁盒走向柜台。", options: [StoryOption(title: "检查铁盒", next: "tin"), StoryOption(title: "核对纸箱", next: "parcel")]),
+        StoryNode(id: "cloth", text: "布线与柜台蓝布的破口吻合。布下压着阿岚的便条：漏雨，曲谱移入蓝盒。柜台后有只蓝铁盒。", options: [StoryOption(title: "请她开盒", next: "proven"), StoryOption(title: "先指认小周", next: "accused")]),
+        StoryNode(id: "courier", text: "小周说纸箱里是茶杯，愿意开箱。他记得阿岚说过屋顶漏雨，曾拿蓝布包起桌上一叠纸。", options: [StoryOption(title: "回店查蓝盒", next: "found"), StoryOption(title: "坚持查纸箱", next: "noProof")]),
+        StoryNode(id: "tin", text: "铁盒旁有张阿岚署名的便条：漏雨，曲谱移入蓝盒。盒沿夹着蓝布，正是客人看见她抱走的那只。", options: [StoryOption(title: "请她开盒", next: "proven"), StoryOption(title: "先指认小周", next: "accused")]),
+        StoryNode(id: "parcel", text: "小周当面打开纸箱，里面只有茶杯，送货单也对得上。他提醒你：阿岚收工前总会检查蓝铁盒。", options: [StoryOption(title: "回店查蓝盒", next: "found"), StoryOption(title: "继续找赃物", next: "noProof")]),
+        StoryNode(id: "proven", text: "阿岚打开蓝盒，曲谱果然裹在蓝布里。她想起停电时忙着接漏水，忘了搬动曲谱。你如何结案？", options: [StoryOption(title: "串起证据", next: "endA"), StoryOption(title: "只报已找回", next: "endB")]),
+        StoryNode(id: "found", text: "回店后，阿岚按你的请求打开蓝盒，找到了曲谱。但是谁放进去、为什么放，你还没有核实。", options: [StoryOption(title: "核实搬动原因", next: "endA"), StoryOption(title: "只报已找回", next: "endB")]),
+        StoryNode(id: "accused", text: "你指认小周，他请你拿出证据。阿岚这时打开蓝盒，曲谱就在里面；她承认是自己避雨时收起的。", options: [StoryOption(title: "向小周道歉", next: "endC"), StoryOption(title: "仍保留怀疑", next: "endD")]),
+        StoryNode(id: "noProof", text: "纸箱没有曲谱，也没人见小周拿走它。蓝铁盒还没查过。阿岚问你，能认定是谁拿走了吗？", options: [StoryOption(title: "暂不下结论", next: "endD"), StoryOption(title: "回店核实", next: "endA")]),
+        StoryNode(id: "endA", text: "阿岚取出曲谱，出示移入蓝盒的便条：停电时为避漏雨收起，忙乱中忘了。便条与实物相合，小周洗清嫌疑。", options: [], endingTitle: "蓝盒里的真相"),
+        StoryNode(id: "endB", text: "曲谱找回，演奏照常开始。你只报告物品平安，没有说明搬动经过。失物案结束了，小周却还等着一句澄清。", options: [], endingTitle: "找回之后"),
+        StoryNode(id: "endC", text: "你撤回指认，向小周道歉。阿岚说明自己为避漏雨收起曲谱。小周接受了道歉：下次，先看证据再叫住我。", options: [], endingTitle: "迟来的澄清"),
+        StoryNode(id: "endD", text: "你留下未结的调查记录。次日阿岚公布便条与蓝盒中的曲谱，证实只是避雨移放。没有证据，怀疑终究不是答案。", options: [], endingTitle: "未落笔的结论")
+    ])
+
     static func story(_ id: String, version: Int = 2) -> Story? { (version == 1 ? legacy : all).first { $0.id == id } }
 
 }
@@ -188,6 +214,14 @@ enum NextStoryOrder: String, Codable, CaseIterable {
     var title: String { self == .unfinishedFirst ? "优先未完成" : "按列表顺序" }
 }
 struct StoryState: Codable {
+    var language: StoryLanguage? = nil
+    var widgetPage: Int? = nil
+    var languageToken: String { (language ?? .system).rawValue + ":" + (language ?? .system).resolved().rawValue }
+    var readingPages: [String] { StoryPages.split(localizer(text), limit: (language ?? .system).resolved() == .english ? 100 : 60) }
+    var pageIndex: Int { min(max(widgetPage ?? 0, 0), readingPages.count - 1) }
+    var pageText: String { readingPages[pageIndex] }
+    var lastPage: Bool { pageIndex == readingPages.count - 1 }
+    var localizer: StoryLocalizer { StoryLocalizer(language: language ?? .system) }
     var nextStoryOrder: NextStoryOrder? = nil
     var version = 2
     var activeID = "last-letter"
@@ -202,6 +236,7 @@ struct StoryState: Codable {
     var text: String { node.text }
     var options: [String] { node.options.map(\.title) }
     mutating func select(_ id: String) {
+        if activeID != id { widgetPage = 0 }
         if progress[id] == nil { progress[id] = StoryProgress() }
         if activeID != id { progress[id]!.run = UUID().uuidString }
         activeID = id
@@ -267,12 +302,12 @@ struct StoryStore {
         var p = StoryProgress(); p.contentVersion = 1; p.steps = nil; p.choices = old.choices; p.updated = old.updated
         for c in old.choices { p.nodeID = StoryCatalog.story(state.activeID, version: 1)!.node(p.nodeID)!.options[c == "A" ? 0 : 1].next }
         // Completed validation saves retain the ending they actually saw.
+        // 验证版中已完成的存档，保留用户当时实际读到的结局。
         if old.choices.count == 4 { p.nodeID = old.choices.filter { $0 == "A" }.count >= 2 ? "endA" : "endB" }
         p.endings = old.endings.compactMap { $0 == "灯火重逢" ? "endA" : ($0 == "寄往明天" ? "endB" : nil) }
         state.progress[state.activeID] = p
         return state
     }
-    // App 和 Widget 会跨进程读写，锁必须覆盖整个读取、修改和保存过程。
     static func transaction(_ mutate: ((inout StoryState) -> Void)? = nil) throws -> StoryState {
         let dir = try directory()
         let fd = open(dir.appendingPathComponent("state.lock").path, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR)
@@ -296,10 +331,9 @@ struct StoryStore {
         try encoded.write(to: url, options: .atomic)
         return state
     }
-    static func choose(_ choice: String, run: String, step: Int) throws {
+    static func choose(_ choice: String, run: String, step: Int, page: Int? = nil, languageToken: String? = nil) throws {
         _ = try transaction { state in
-            // 拒绝旧轮次或旧节点的按钮请求，避免连续点击推进两步。
-            guard state.run == run, state.step == step, !state.finished, ["A","B"].contains(choice) else { return }
+            guard (page == nil || (page == state.pageIndex && state.lastPage)), (languageToken == nil || languageToken == state.languageToken), state.run == run, state.step == step, !state.finished, ["A","B"].contains(choice) else { return }
             var p = state.current
             let option = state.node.options[choice == "A" ? 0 : 1]
             p.steps = (p.steps ?? []) + [JourneyStep(node: state.node, choice: choice, optionTitle: option.title)]
@@ -308,12 +342,15 @@ struct StoryStore {
             if state.story.node(p.nodeID)!.endingTitle != nil && !p.endings.contains(p.nodeID) { p.endings.append(p.nodeID) }
             if state.story.node(p.nodeID)!.endingTitle != nil { archive(&p, story: state.story) }
             state.progress[state.activeID] = p
+            state.widgetPage = 0
         }
     }
     // End-screen actions are checked inside the same lock as the mutation.
-    static func finishAction(_ action: String, run: String) throws {
+    // 结局页操作的校验和存档修改放在同一个锁内完成。
+    static func finishAction(_ action: String, run: String, page: Int? = nil, languageToken: String? = nil) throws {
         _ = try transaction { state in
-            guard state.run == run, state.finished else { return }
+            guard (page == nil || (page == state.pageIndex && state.lastPage)), (languageToken == nil || languageToken == state.languageToken), state.run == run, state.finished else { return }
+            state.widgetPage = 0
             if action == "restart" {
                 state.progress[state.activeID] = freshProgress(state.current, id: state.activeID)
             } else if action == "next" {
@@ -328,6 +365,18 @@ struct StoryStore {
             }
         }
     }
+    static func turnPage(_ delta: Int, run: String, step: Int, page: Int, languageToken: String) throws {
+        _ = try transaction { state in
+            guard [-1, 1].contains(delta), state.run == run, state.step == step,
+                  state.pageIndex == page, state.languageToken == languageToken else { return }
+            state.widgetPage = min(max(page + delta, 0), state.readingPages.count - 1)
+        }
+    }
+    static func setLanguage(_ language: StoryLanguage) throws {
+        _ = try transaction { state in
+            if state.language != language { state.language = language; state.widgetPage = 0 }
+        }
+    }
     static func setNextStoryOrder(_ order: NextStoryOrder) throws {
         _ = try transaction { $0.nextStoryOrder = order }
     }
@@ -338,7 +387,7 @@ struct StoryStore {
     static func reset(_ id: String) throws {
         guard StoryCatalog.story(id) != nil else { throw StoreError.invalidData }
         _ = try transaction { state in
-            state.progress[id] = freshProgress(state.progress[id], id: id); state.select(id)
+            state.progress[id] = freshProgress(state.progress[id], id: id); state.select(id); state.widgetPage = 0
         }
     }
 }

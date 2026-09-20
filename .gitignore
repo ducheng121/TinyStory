@@ -4,6 +4,5 @@ build/
 Evidence/
 xcuserdata/
 *.xcuserstate
-__pycache__/
 
 /Tests/
