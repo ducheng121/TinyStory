@@ -1411,6 +1411,57 @@
           }
         }
       }
+    },
+    "故事暂时无法加载": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories unavailable"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "故事暂时无法加载"
+          }
+        }
+      }
+    },
+    "故事资源暂时无法加载，请打开 App 查看。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story resources could not be loaded. Open the app for details."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "故事资源暂时无法加载，请打开 App 查看。"
+          }
+        }
+      }
+    },
+    "故事资源不完整，请更新 App 后重试。已有进度不会被本次读取覆盖。": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Story resources are incomplete. Update the app and try again. This read has not overwritten your saved progress."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "故事资源不完整，请更新 App 后重试。已有进度不会被本次读取覆盖。"
+          }
+        }
+      }
     }
   },
   "version": "1.0"

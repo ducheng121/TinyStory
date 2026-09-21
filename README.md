@@ -35,11 +35,11 @@ The Swift sources cover the app screens, widget actions and layout, story state,
 
 ## 运行 / Run
 
-使用 Xcode 打开 `TinyStory.xcodeproj`，选择 `StoryApp`，运行到 iPhone 或模拟器。首次启动后，在桌面添加中号小组件即可开始阅读。
+需要 iOS 26 或更高版本。使用 Xcode 打开 `TinyStory.xcodeproj`，选择 `StoryApp`，运行到 iPhone 或模拟器。首次启动后，在桌面添加中号小组件即可开始阅读。
 
 真机运行需要为 App 和 Widget 配置签名，并使用同一个 App Group。使用自己的开发者账号时，需要同步调整工程标识、共享组权限和 `StoryStore.group`。
 
-Open `TinyStory.xcodeproj` in Xcode, select `StoryApp`, and run on an iPhone or simulator. Launch the app once, then add a medium widget to the Home Screen.
+Requires iOS 26 or later. Open `TinyStory.xcodeproj` in Xcode, select `StoryApp`, and run on an iPhone or simulator. Launch the app once, then add a medium widget to the Home Screen.
 
 For a physical device, configure signing for both targets and use the same App Group. When using your own developer account, update the bundle identifiers, App Group entitlement, and `StoryStore.group` together.
 
@@ -69,3 +69,33 @@ Each JSON file holds both languages and one shared branching graph. Text fields 
 `Stories/Legacy/` 保留第一版五篇故事；其中 `snapshot-translations.json` 保存历史正文的英文对应，用于回顾旧旅程。界面按钮、标签等在 Xcode 的 `Localizable.xcstrings` 中编辑。JSON 修改后需重新构建，App 与 Widget 都会打包同一份内容。
 
 `Stories/Legacy/` preserves the five first-edition stories. Its `snapshot-translations.json` keeps translations for historical journey text. Edit interface labels in `Localizable.xcstrings`. Rebuild after changing resources; both targets bundle the same story content.
+
+## 许可 / License
+
+本项目采用 [MIT License](LICENSE)。
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 内容校验 / Content validation
+
+Release 构建会运行 `Tools/ValidateStories.swift`，检查缺失文件、译文、节点与选项、分支断链、循环、不可达节点及四次选择的结局路径。校验失败会阻止构建；运行时发现资源问题会显示提示并保留已有存档。
+
+Release builds run `Tools/ValidateStories.swift` to check files, translations, nodes, choices, broken links, cycles, unreachable scenes, and four-choice ending paths. Invalid content stops the build. Runtime content errors show a message without overwriting saved progress.
+
+## 真机截图 / iPhone screenshots
+
+### 桌面小组件 / Home Screen widget
+
+<img src="Docs/Screenshots/widget-zh.jpg" width="600" alt="桌面小组件：末班来信的正文与 A/B 选项 / Home Screen widget with story text and A/B choices">
+
+### 中文
+
+| 故事库 | 我的旅程 | 设置 |
+| --- | --- | --- |
+| <img src="Docs/Screenshots/library-zh.png" width="250" alt="中文故事库"> | <img src="Docs/Screenshots/journeys-zh.png" width="250" alt="中文我的旅程"> | <img src="Docs/Screenshots/settings-zh.png" width="250" alt="中文设置"> |
+
+### English
+
+| Library | My Journeys | Settings |
+| --- | --- | --- |
+| <img src="Docs/Screenshots/library-en.png" width="250" alt="Library in English"> | <img src="Docs/Screenshots/journeys-en.png" width="250" alt="My Journeys in English"> | <img src="Docs/Screenshots/settings-en.png" width="250" alt="Settings in English"> |

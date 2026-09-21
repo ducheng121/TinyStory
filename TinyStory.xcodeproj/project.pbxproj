@@ -168,6 +168,8 @@
 				<string>00000000000000000000000F</string>
 				<string>000000000000000000000007</string>
 				<string>00000000000000000000003D</string>
+				<string>000000000000000000000041</string>
+				<string>000000000000000000000043</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -260,7 +262,7 @@
 				<key>INFOPLIST_KEY_CFBundleDisplayName</key>
 				<string>TinyStory</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>26.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -308,7 +310,7 @@
 				<key>INFOPLIST_KEY_CFBundleDisplayName</key>
 				<string>TinyStory</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>26.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -320,7 +322,7 @@
 				<key>SKIP_INSTALL</key>
 				<string>YES</string>
 				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
+				<string>-O</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
@@ -448,6 +450,8 @@
 				<string>1</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string>K8ZXYT63XK</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>NO</string>
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
@@ -457,7 +461,7 @@
 				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>26.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -496,6 +500,8 @@
 				<string>1</string>
 				<key>DEVELOPMENT_TEAM</key>
 				<string>K8ZXYT63XK</string>
+				<key>ENABLE_USER_SCRIPT_SANDBOXING</key>
+				<string>NO</string>
 				<key>GENERATE_INFOPLIST_FILE</key>
 				<string>YES</string>
 				<key>INFOPLIST_FILE</key>
@@ -505,7 +511,7 @@
 				<key>INFOPLIST_KEY_UILaunchScreen_Generation</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>17.0</string>
+				<string>26.0</string>
 				<key>MARKETING_VERSION</key>
 				<string>1.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
@@ -515,7 +521,7 @@
 				<key>SDKROOT</key>
 				<string>iphoneos</string>
 				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
+				<string>-O</string>
 				<key>SWIFT_VERSION</key>
 				<string>5.0</string>
 				<key>TARGETED_DEVICE_FAMILY</key>
@@ -546,6 +552,7 @@
 			<string>000000000000000000000025</string>
 			<key>buildPhases</key>
 			<array>
+				<string>000000000000000000000044</string>
 				<string>000000000000000000000022</string>
 				<string>000000000000000000000028</string>
 				<string>000000000000000000000036</string>
@@ -868,6 +875,69 @@
 			<string>00000000000000000000003E</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>000000000000000000000041</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>LICENSE</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>000000000000000000000042</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ValidateStories.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>000000000000000000000043</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>000000000000000000000042</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tools</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>000000000000000000000044</key>
+		<dict>
+			<key>alwaysOutOfDate</key>
+			<integer>1</integer>
+			<key>buildActionMask</key>
+			<integer>2147483647</integer>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Validate Story Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<integer>0</integer>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>set -eu
+if [ "$CONFIGURATION" != "Release" ]; then exit 0; fi
+sdk=$(xcrun --sdk macosx --show-sdk-path)
+xcrun --sdk macosx swiftc -sdk "$sdk" -target "$(uname -m)-apple-macosx14.0" -module-cache-path "$DERIVED_FILE_DIR/StoryValidationCache" "$SRCROOT/Sources/Story.swift" "$SRCROOT/Sources/StoryLanguage.swift" "$SRCROOT/Sources/StoryContent.swift" "$SRCROOT/Tools/ValidateStories.swift" -o "$DERIVED_FILE_DIR/ValidateStories"
+"$DERIVED_FILE_DIR/ValidateStories" "$SRCROOT/Resources/Stories"
+</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

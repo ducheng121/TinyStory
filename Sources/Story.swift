@@ -186,6 +186,7 @@ struct StoryStore {
         return state
     }
     static func transaction(_ mutate: ((inout StoryState) -> Void)? = nil) throws -> StoryState {
+        try StoryContent.requireAvailable()
         let dir = try directory()
         let fd = open(dir.appendingPathComponent("state.lock").path, O_CREAT | O_RDWR, S_IRUSR | S_IWUSR)
         guard fd >= 0 else { throw CocoaError(.fileWriteUnknown) }

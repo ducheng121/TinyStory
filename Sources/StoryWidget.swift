@@ -51,7 +51,7 @@ struct TurnPageIntent: AppIntent {
 }
 struct Entry: TimelineEntry { let date: Date; let state: StoryState; var error: Bool = false }
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> Entry { Entry(date: .now, state: StoryState()) }
+    func placeholder(in context: Context) -> Entry { Entry(date: .now, state: StoryState(), error: StoryContent.error != nil) }
     func current() -> Entry { do { return Entry(date: .now, state: try StoryStore.transaction()) } catch { return Entry(date: .now, state: StoryState(), error: true) } }
     func getSnapshot(in context: Context, completion: @escaping (Entry) -> Void) { completion(current()) }
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) { completion(Timeline(entries: [current()], policy: .never)) }
@@ -65,7 +65,7 @@ struct StoryWidgetView: View {
     }
     var body: some View {
         Group {
-            if entry.error { Text(l("暂时无法读取进度，请在 App 中重试。")).font(.subheadline).padding() }
+            if entry.error { Text(l(StoryContent.error == nil ? "暂时无法读取进度，请在 App 中重试。" : "故事资源暂时无法加载，请打开 App 查看。")).font(.subheadline).padding() }
             else {
                 WidgetReadingLayout(state: entry.state, backButton: backButton) {
                     HStack(spacing: 8) {

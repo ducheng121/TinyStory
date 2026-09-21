@@ -2,7 +2,15 @@ import SwiftUI
 import WidgetKit
 
 @main struct StoryApp: App {
-    var body: some Scene { WindowGroup { LibraryView().tint(.orange).task {
+    var body: some Scene { WindowGroup { Group {
+        if StoryContent.error != nil {
+            ContentUnavailableView {
+                Label("故事暂时无法加载", systemImage: "exclamationmark.book.closed")
+            } description: {
+                Text("故事资源不完整，请更新 App 后重试。已有进度不会被本次读取覆盖。")
+            }
+        } else { LibraryView() }
+    }.tint(.orange).task {
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-audit-layout") { try? LayoutAudit.render() }
         #endif
