@@ -1,0 +1,337 @@
+{
+  "edition": 2,
+  "id": "rain-score",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "window",
+          "title": {
+            "en": "Check the sill",
+            "zh-Hans": "查看窗台"
+          }
+        },
+        {
+          "id": "B",
+          "next": "witness",
+          "title": {
+            "en": "Ask a guest",
+            "zh-Hans": "询问客人"
+          }
+        }
+      ],
+      "text": {
+        "en": "On a stormy night, the tea shop's handwritten score disappears. Lan, the owner, says courier Zhou just left. There is water by the window. Where do you investigate first?",
+        "zh-Hans": "暴雨夜，茶馆的手写曲谱不见了。店主阿岚说送货员小周刚走，窗边还有水迹。你先查哪里？"
+      }
+    },
+    {
+      "id": "window",
+      "options": [
+        {
+          "id": "A",
+          "next": "cloth",
+          "title": {
+            "en": "Match the cloth",
+            "zh-Hans": "核对蓝布"
+          }
+        },
+        {
+          "id": "B",
+          "next": "courier",
+          "title": {
+            "en": "Question Zhou",
+            "zh-Hans": "追问小周"
+          }
+        }
+      ],
+      "text": {
+        "en": "The outer sill is soaked, but the dusty inner sill has no footprints. A blue thread lies where the score was. A piece of blue cloth sits on the counter.",
+        "zh-Hans": "外窗台湿透，内侧积灰却没有脚印。曲谱原处留着一根蓝布线，柜台上恰有一块蓝布。"
+      }
+    },
+    {
+      "id": "witness",
+      "options": [
+        {
+          "id": "A",
+          "next": "tin",
+          "title": {
+            "en": "Check the tin",
+            "zh-Hans": "检查铁盒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "parcel",
+          "title": {
+            "en": "Check the carton",
+            "zh-Hans": "核对纸箱"
+          }
+        }
+      ],
+      "text": {
+        "en": "A guest saw Zhou leave with a carton, but did not see the score. Before the blackout, the guest also saw Lan carrying a blue tin toward the counter.",
+        "zh-Hans": "客人说小周离开时提着纸箱，却没看见曲谱。他还记得停电前，阿岚抱着蓝铁盒走向柜台。"
+      }
+    },
+    {
+      "id": "cloth",
+      "options": [
+        {
+          "id": "A",
+          "next": "proven",
+          "title": {
+            "en": "Ask her to open it",
+            "zh-Hans": "请她开盒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "accused",
+          "title": {
+            "en": "Accuse Zhou",
+            "zh-Hans": "先指认小周"
+          }
+        }
+      ],
+      "text": {
+        "en": "The thread matches a tear in the blue cloth. Beneath it is Lan's note: 'Roof leaking. Score moved to blue tin.' A blue tin sits behind the counter.",
+        "zh-Hans": "布线与柜台蓝布的破口吻合。布下压着阿岚的便条：漏雨，曲谱移入蓝盒。柜台后有只蓝铁盒。"
+      }
+    },
+    {
+      "id": "courier",
+      "options": [
+        {
+          "id": "A",
+          "next": "found",
+          "title": {
+            "en": "Return to the tin",
+            "zh-Hans": "回店查蓝盒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "noProof",
+          "title": {
+            "en": "Check his carton",
+            "zh-Hans": "坚持查纸箱"
+          }
+        }
+      ],
+      "text": {
+        "en": "Zhou says his carton holds teacups and offers to open it. He remembers Lan mentioning a roof leak and wrapping a stack of papers from the table in blue cloth.",
+        "zh-Hans": "小周说纸箱里是茶杯，愿意开箱。他记得阿岚说过屋顶漏雨，曾拿蓝布包起桌上一叠纸。"
+      }
+    },
+    {
+      "id": "tin",
+      "options": [
+        {
+          "id": "A",
+          "next": "proven",
+          "title": {
+            "en": "Ask her to open it",
+            "zh-Hans": "请她开盒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "accused",
+          "title": {
+            "en": "Accuse Zhou",
+            "zh-Hans": "先指认小周"
+          }
+        }
+      ],
+      "text": {
+        "en": "Beside the tin is a note signed by Lan: 'Roof leaking. Score moved to blue tin.' Blue cloth catches in its rim. It is the tin the guest saw her carry.",
+        "zh-Hans": "铁盒旁有张阿岚署名的便条：漏雨，曲谱移入蓝盒。盒沿夹着蓝布，正是客人看见她抱走的那只。"
+      }
+    },
+    {
+      "id": "parcel",
+      "options": [
+        {
+          "id": "A",
+          "next": "found",
+          "title": {
+            "en": "Return to the tin",
+            "zh-Hans": "回店查蓝盒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "noProof",
+          "title": {
+            "en": "Keep searching",
+            "zh-Hans": "继续找赃物"
+          }
+        }
+      ],
+      "text": {
+        "en": "Zhou opens the carton in front of you. It holds only teacups, matching the delivery slip. He reminds you that Lan always checks the blue tin before closing.",
+        "zh-Hans": "小周当面打开纸箱，里面只有茶杯，送货单也对得上。他提醒你：阿岚收工前总会检查蓝铁盒。"
+      }
+    },
+    {
+      "id": "proven",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Explain the clues",
+            "zh-Hans": "串起证据"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Report it found",
+            "zh-Hans": "只报已找回"
+          }
+        }
+      ],
+      "text": {
+        "en": "Lan opens the blue tin. The score is there, wrapped in blue cloth. She remembers catching leaks during the blackout and forgetting she had moved it. How do you close the case?",
+        "zh-Hans": "阿岚打开蓝盒，曲谱果然裹在蓝布里。她想起停电时忙着接漏水，忘了搬动曲谱。你如何结案？"
+      }
+    },
+    {
+      "id": "found",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Ask who and why",
+            "zh-Hans": "核实搬动原因"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Report it found",
+            "zh-Hans": "只报已找回"
+          }
+        }
+      ],
+      "text": {
+        "en": "Back at the shop, Lan opens the blue tin at your request and finds the score. But you have not yet verified who put it there, or why.",
+        "zh-Hans": "回店后，阿岚按你的请求打开蓝盒，找到了曲谱。但是谁放进去、为什么放，你还没有核实。"
+      }
+    },
+    {
+      "id": "accused",
+      "options": [
+        {
+          "id": "A",
+          "next": "endC",
+          "title": {
+            "en": "Apologize to Zhou",
+            "zh-Hans": "向小周道歉"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endD",
+          "title": {
+            "en": "Stay suspicious",
+            "zh-Hans": "仍保留怀疑"
+          }
+        }
+      ],
+      "text": {
+        "en": "You accuse Zhou, who asks for evidence. Just then, Lan opens the blue tin. The score is inside. She admits she put it there herself to protect it from the rain.",
+        "zh-Hans": "你指认小周，他请你拿出证据。阿岚这时打开蓝盒，曲谱就在里面；她承认是自己避雨时收起的。"
+      }
+    },
+    {
+      "id": "noProof",
+      "options": [
+        {
+          "id": "A",
+          "next": "endD",
+          "title": {
+            "en": "Withhold judgment",
+            "zh-Hans": "暂不下结论"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Go back and check",
+            "zh-Hans": "回店核实"
+          }
+        }
+      ],
+      "text": {
+        "en": "The carton has no score, and nobody saw Zhou take it. You have not checked the blue tin yet. Lan asks whether you can say who took the score.",
+        "zh-Hans": "纸箱没有曲谱，也没人见小周拿走它。蓝铁盒还没查过。阿岚问你，能认定是谁拿走了吗？"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "The Tin's Truth",
+        "zh-Hans": "蓝盒里的真相"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "Lan takes out the score and shows her note about moving it to the blue tin. She kept it dry during the blackout, then forgot in the rush. Note and object agree, clearing Zhou.",
+        "zh-Hans": "阿岚取出曲谱，出示移入蓝盒的便条：停电时为避漏雨收起，忙乱中忘了。便条与实物相合，小周洗清嫌疑。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Found, Not Solved",
+        "zh-Hans": "找回之后"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "The score is found and the performance begins on time. You report only that it is safe, not how it was moved. The lost item case is closed, but Zhou still awaits a word to clear his name.",
+        "zh-Hans": "曲谱找回，演奏照常开始。你只报告物品平安，没有说明搬动经过。失物案结束了，小周却还等着一句澄清。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A Late Apology",
+        "zh-Hans": "迟来的澄清"
+      },
+      "id": "endC",
+      "options": [],
+      "text": {
+        "en": "You withdraw your accusation and apologize to Zhou. Lan explains that she put the score away to keep it dry. Zhou accepts: 'Next time, check the evidence before stopping me.'",
+        "zh-Hans": "你撤回指认，向小周道歉。阿岚说明自己为避漏雨收起曲谱。小周接受了道歉：下次，先看证据再叫住我。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "An Open Case",
+        "zh-Hans": "未落笔的结论"
+      },
+      "id": "endD",
+      "options": [],
+      "text": {
+        "en": "You leave an unfinished case record. Next day, Lan shows her note and the score from the blue tin, proving she only moved it out of the rain. Without evidence, suspicion is no answer.",
+        "zh-Hans": "你留下未结的调查记录。次日阿岚公布便条与蓝盒中的曲谱，证实只是避雨移放。没有证据，怀疑终究不是答案。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "A score vanishes before the tea shop closes. A wet sill and a blue tin may explain why.",
+    "zh-Hans": "茶馆打烊前，手写曲谱不见了。窗边水迹与一只蓝铁盒，谁能解释？"
+  },
+  "title": {
+    "en": "The Missing Music",
+    "zh-Hans": "雨夜失踪的曲谱"
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "edition": 2,
+  "id": "rain-shop",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s2a",
+          "title": {
+            "en": "Borrow drizzle",
+            "zh-Hans": "借细雨"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s2b",
+          "title": {
+            "en": "Borrow a storm",
+            "zh-Hans": "借骤雨"
+          }
+        }
+      ],
+      "text": {
+        "en": "You shelter in a corner shop. Glass bottles of rain line the counter. The owner says each person may borrow just one shower, to be returned before dawn.",
+        "zh-Hans": "你躲进街角小店，柜台上摆着许多装雨的玻璃瓶。店主说，每人只能借一场雨，天亮前归还。"
+      }
+    },
+    {
+      "id": "a-s2a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s3a",
+          "title": {
+            "en": "Find the garden",
+            "zh-Hans": "去找花园"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s3b",
+          "title": {
+            "en": "Ask whose rain",
+            "zh-Hans": "问雨的主人"
+          }
+        }
+      ],
+      "text": {
+        "en": "Drizzle falls into your palm with the sound of an old piano. The owner says it comes from an abandoned garden, where an outdoor concert was once held.",
+        "zh-Hans": "细雨落进掌心，发出旧钢琴的声音。店主说这来自一座废弃花园，那里曾经有个露天音乐会。"
+      }
+    },
+    {
+      "id": "a-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4a",
+          "title": {
+            "en": "Release the rain",
+            "zh-Hans": "让雨落下"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4b",
+          "title": {
+            "en": "Find the player",
+            "zh-Hans": "寻找女孩"
+          }
+        }
+      ],
+      "text": {
+        "en": "The garden piano has rusted. The keeper says the flowers stopped blooming after the girl who played it left. Only on rainy days can her tune still be heard.",
+        "zh-Hans": "花园里的琴已经生锈。守园人说，弹琴的女孩走后，花就不再开了，只有雨天还能听见旋律。"
+      }
+    },
+    {
+      "id": "a-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4b",
+          "title": {
+            "en": "Knock on her door",
+            "zh-Hans": "敲她的门"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4a",
+          "title": {
+            "en": "Take rain there",
+            "zh-Hans": "带雨回花园"
+          }
+        }
+      ],
+      "text": {
+        "en": "The owner shows an old photograph. The girl now lives across the street and no longer plays. She thinks nobody remembers that concert anymore.",
+        "zh-Hans": "店主拿出一张旧照片：女孩如今住在对街，不再弹琴。她以为，早就没有人记得那场音乐会。"
+      }
+    },
+    {
+      "id": "a-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Applaud her",
+            "zh-Hans": "为她鼓掌"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Listen to rain",
+            "zh-Hans": "陪她听雨"
+          }
+        }
+      ],
+      "text": {
+        "en": "Rain taps a familiar rhythm on the piano lid. Following the sound, the girl reaches the garden but stops outside the gate. 'Is there still an audience here?'",
+        "zh-Hans": "雨落在琴盖上，敲出熟悉的节拍。女孩循声来到花园，却停在门外，问你这里还有听众吗？"
+      }
+    },
+    {
+      "id": "a-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endB",
+          "title": {
+            "en": "Note the tune",
+            "zh-Hans": "记下旋律"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Invite her along",
+            "zh-Hans": "邀她同行"
+          }
+        }
+      ],
+      "text": {
+        "en": "By her window, the girl softly hums the old song. Her fingers aren't nimble enough anymore, she says, but you can take this melody back to the garden.",
+        "zh-Hans": "女孩坐在窗边，轻轻哼起旧曲。她说手指已经不够灵活，但你可以把这段旋律带回花园。"
+      }
+    },
+    {
+      "id": "b-s2b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s3b",
+          "title": {
+            "en": "Ask whose rain",
+            "zh-Hans": "问雨的主人"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s3a",
+          "title": {
+            "en": "Find the garden",
+            "zh-Hans": "去找花园"
+          }
+        }
+      ],
+      "text": {
+        "en": "The bottled storm suddenly falls quiet. The label bears a stranger's name; on the back is a drawing of the garden you often visited as a child.",
+        "zh-Hans": "瓶里的骤雨忽然安静下来。标签写着一个陌生人的名字，背面却画着你小时候常去的花园。"
+      }
+    },
+    {
+      "id": "b-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4a",
+          "title": {
+            "en": "Release the rain",
+            "zh-Hans": "让雨落下"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4b",
+          "title": {
+            "en": "Find the player",
+            "zh-Hans": "寻找女孩"
+          }
+        }
+      ],
+      "text": {
+        "en": "The garden piano has rusted. The keeper says the flowers stopped blooming after the girl who played it left. Only on rainy days can her tune still be heard.",
+        "zh-Hans": "花园里的琴已经生锈。守园人说，弹琴的女孩走后，花就不再开了，只有雨天还能听见旋律。"
+      }
+    },
+    {
+      "id": "b-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4b",
+          "title": {
+            "en": "Knock on her door",
+            "zh-Hans": "敲她的门"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4a",
+          "title": {
+            "en": "Take rain there",
+            "zh-Hans": "带雨回花园"
+          }
+        }
+      ],
+      "text": {
+        "en": "The owner shows an old photograph. The girl now lives across the street and no longer plays. She thinks nobody remembers that concert anymore.",
+        "zh-Hans": "店主拿出一张旧照片：女孩如今住在对街，不再弹琴。她以为，早就没有人记得那场音乐会。"
+      }
+    },
+    {
+      "id": "b-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endC",
+          "title": {
+            "en": "Play the old tune",
+            "zh-Hans": "演奏旧曲"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endD",
+          "title": {
+            "en": "Write a new one",
+            "zh-Hans": "写首新曲"
+          }
+        }
+      ],
+      "text": {
+        "en": "The storm you borrowed opens a hidden compartment beneath the piano, revealing the girl's lost score. She arrives and asks: 'Play the old piece, or write a new one?'",
+        "zh-Hans": "你借来的骤雨冲开了琴底暗格，露出女孩藏下的手稿。她赶来问你：让旧曲响起，还是写一首新的？"
+      }
+    },
+    {
+      "id": "b-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endD",
+          "title": {
+            "en": "Add today's rain",
+            "zh-Hans": "写进雨声"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endC",
+          "title": {
+            "en": "Replay the tune",
+            "zh-Hans": "重弹旧曲"
+          }
+        }
+      ],
+      "text": {
+        "en": "As the storm taps the windowsill, the girl brings out an unfinished score. She wants to write today's rain into it, but is also willing to play the old melody for you again.",
+        "zh-Hans": "骤雨敲响窗沿，女孩翻出未完成的手稿。她想写进今天的雨声，也愿意为你再弹一遍旧日旋律。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "An Encore",
+        "zh-Hans": "雨中返场"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "The girl returns to the piano. Neighbors listen under umbrellas until the last note. Before dawn, you return the empty bottle. A burst of applause rests at its bottom.",
+        "zh-Hans": "女孩重新坐到琴前，街坊撑伞听完最后一曲。天亮前，你归还了空瓶。瓶底多了一阵掌声。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Rain Remembered",
+        "zh-Hans": "留住雨声"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "You write down the melody at the garden gate and return the rain bottle before dawn. Later, whenever it rains, someone hums it. Her song has not been forgotten.",
+        "zh-Hans": "你将旋律记在花园门口，天亮前归还雨瓶。后来每逢下雨，总有人轻哼。女孩的歌没有被忘记。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "The Lost Score",
+        "zh-Hans": "雨里的手稿"
+      },
+      "id": "endC",
+      "options": [],
+      "text": {
+        "en": "The storm helped recover the lost score. The girl plays the old piece through. You return the rain bottle, leaving this rediscovery in the garden.",
+        "zh-Hans": "骤雨替你找回了遗失的手稿。女孩照着旧谱弹完一曲，你归还雨瓶，把这段失而复得留在花园。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A New Rainy Season",
+        "zh-Hans": "新的雨季"
+      },
+      "id": "endD",
+      "options": [],
+      "text": {
+        "en": "The girl writes the storm into a new piece and gives you its first score. You return the bottle on time. Hearing its changed tune, the owner smiles and accepts it.",
+        "zh-Hans": "女孩把骤雨写进新曲，送你第一份乐谱。你准时还瓶，店主听见瓶里换了旋律，笑着收下它。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "This shop lends you the rain you need, not an umbrella.",
+    "zh-Hans": "这家店不卖伞，只借出一场你需要的雨。"
+  },
+  "title": {
+    "en": "Borrowed Rain",
+    "zh-Hans": "借雨小店"
+  }
+}

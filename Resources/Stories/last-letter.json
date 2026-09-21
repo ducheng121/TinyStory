@@ -1,0 +1,337 @@
+{
+  "edition": 2,
+  "id": "last-letter",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s2a",
+          "title": {
+            "en": "Open it",
+            "zh-Hans": "拆开信封"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s2b",
+          "title": {
+            "en": "Find its owner",
+            "zh-Hans": "寻找失主"
+          }
+        }
+      ],
+      "text": {
+        "en": "Before the last train leaves, you find a letter in the empty station. It bears your name, but tomorrow's postmark.",
+        "zh-Hans": "末班车离站前，你在空荡的候车室捡到一封信。信封上写着你的名字，邮戳却是明天。"
+      }
+    },
+    {
+      "id": "a-s2a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s3a",
+          "title": {
+            "en": "Follow him",
+            "zh-Hans": "追上背影"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s3b",
+          "title": {
+            "en": "Ask the master",
+            "zh-Hans": "询问站长"
+          }
+        }
+      ],
+      "text": {
+        "en": "The letter says: Don't let the old station's lamp go out. Outside, a familiar figure walks away. You also hear the stationmaster calling your name.",
+        "zh-Hans": "信里写着：别让旧站的灯熄灭。窗外，一个熟悉的背影正在离开，你也听见站长喊你的名字。"
+      }
+    },
+    {
+      "id": "a-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4a",
+          "title": {
+            "en": "Ask him to stay",
+            "zh-Hans": "请他留下"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4b",
+          "title": {
+            "en": "Ask about it",
+            "zh-Hans": "问起那封信"
+          }
+        }
+      ],
+      "text": {
+        "en": "You catch up at the old station's door. The man is handing his keys to the caretaker. Seeing the envelope, he stops. 'Have you finally decided to come?'",
+        "zh-Hans": "你追到旧站门口，那人正把钥匙交给管理员。看见信封，他停下脚步：你终于愿意来了吗？"
+      }
+    },
+    {
+      "id": "a-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4b",
+          "title": {
+            "en": "Catch the train",
+            "zh-Hans": "去追列车"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4a",
+          "title": {
+            "en": "Light the lamp",
+            "zh-Hans": "点亮旧灯"
+          }
+        }
+      ],
+      "text": {
+        "en": "The stationmaster brings out a stack of unsent letters. The top one reads: If you don't come tonight, I'll take the last train somewhere far away.",
+        "zh-Hans": "站长拿出一叠未寄出的信。最上面一封写着：如果今晚等不到你，我就搭末班车去远方。"
+      }
+    },
+    {
+      "id": "a-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Stay tonight",
+            "zh-Hans": "留在今晚"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "For Tomorrow",
+            "zh-Hans": "寄往明天"
+          }
+        }
+      ],
+      "text": {
+        "en": "The old lamp lights up, and your friend turns back. The train is still waiting. 'Stay and talk tonight, or write what we never said for tomorrow?'",
+        "zh-Hans": "旧灯亮起，朋友回过头来。列车还在等，他问你：今晚留下聊聊，还是把没说的话写给明天？"
+      }
+    },
+    {
+      "id": "a-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endB",
+          "title": {
+            "en": "Make a promise",
+            "zh-Hans": "写下约定"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Go back together",
+            "zh-Hans": "一起回去"
+          }
+        }
+      ],
+      "text": {
+        "en": "As your friend walks toward the train, he hands you a blank postcard. 'Write what you want to say for tomorrow.' You could also invite him back to sit at the station.",
+        "zh-Hans": "朋友走向列车，临行前递来一张空白明信片：把想说的话写给明天吧。你也可以邀他回旧站坐坐。"
+      }
+    },
+    {
+      "id": "b-s2b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s3b",
+          "title": {
+            "en": "Find the master",
+            "zh-Hans": "找站长"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s3a",
+          "title": {
+            "en": "Follow him",
+            "zh-Hans": "追上背影"
+          }
+        }
+      ],
+      "text": {
+        "en": "The conductor recognizes the handwriting: the sender comes here every night. The stationmaster keeps his messages, and the man is just outside now.",
+        "zh-Hans": "列车员认出信封上的字迹，说写信的人每晚都来。站长保管着他的留言，那人此刻就在窗外。"
+      }
+    },
+    {
+      "id": "b-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4a",
+          "title": {
+            "en": "Ask him to stay",
+            "zh-Hans": "请他留下"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4b",
+          "title": {
+            "en": "Ask about it",
+            "zh-Hans": "问起那封信"
+          }
+        }
+      ],
+      "text": {
+        "en": "You catch up at the old station's door. The man is handing his keys to the caretaker. Seeing the envelope, he stops. 'Have you finally decided to come?'",
+        "zh-Hans": "你追到旧站门口，那人正把钥匙交给管理员。看见信封，他停下脚步：你终于愿意来了吗？"
+      }
+    },
+    {
+      "id": "b-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4b",
+          "title": {
+            "en": "Catch the train",
+            "zh-Hans": "去追列车"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4a",
+          "title": {
+            "en": "Light the lamp",
+            "zh-Hans": "点亮旧灯"
+          }
+        }
+      ],
+      "text": {
+        "en": "The stationmaster brings out a stack of unsent letters. The top one reads: If you don't come tonight, I'll take the last train somewhere far away.",
+        "zh-Hans": "站长拿出一叠未寄出的信。最上面一封写着：如果今晚等不到你，我就搭末班车去远方。"
+      }
+    },
+    {
+      "id": "b-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endC",
+          "title": {
+            "en": "Ask him to stay",
+            "zh-Hans": "请他留下"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endD",
+          "title": {
+            "en": "Post it for him",
+            "zh-Hans": "替他投递"
+          }
+        }
+      ],
+      "text": {
+        "en": "You did not open the letter. Your friend takes the sealed envelope and says it holds his farewell to the old station. He is willing to stay, or let you post it for him.",
+        "zh-Hans": "你没有拆信。朋友接过完好的信封，说里面是给旧站的告别信。他愿意留下，或请你替他投递。"
+      }
+    },
+    {
+      "id": "b-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endD",
+          "title": {
+            "en": "Send his farewell",
+            "zh-Hans": "送出告别信"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endC",
+          "title": {
+            "en": "Take the keys",
+            "zh-Hans": "接过钥匙"
+          }
+        }
+      ],
+      "text": {
+        "en": "Seeing the envelope still sealed, your friend offers you the old station's keys: 'Keep this place for me, or send my farewell letter.'",
+        "zh-Hans": "朋友发现信封仍未拆开，便将旧站钥匙交给你：替我守住这间屋子，或者把告别信送出去吧。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Reunited",
+        "zh-Hans": "灯火重逢"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "You finish reading those letters together in the old station. Smiling, your friend admits he stamped tomorrow's date by mistake. Luckily, your reunion wasn't another day late.",
+        "zh-Hans": "你们在旧站读完了那些信。朋友笑着承认，明天的邮戳是他盖错的。幸好重逢没有再迟一天。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "For Tomorrow",
+        "zh-Hans": "寄往明天"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "You write a promise to meet on the letter's date: tomorrow. Before boarding, your friend smiles. 'The postmark was a mistake, but we mustn't miss tomorrow's meeting.'",
+        "zh-Hans": "你按信上明天的日期写下见面约定。朋友登车前笑了：邮戳虽然盖错，明天的约定可不能再错过。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "The Station Keeper",
+        "zh-Hans": "旧站守信人"
+      },
+      "id": "endC",
+      "options": [],
+      "text": {
+        "en": "You keep the letter's secret and accept the station keys. Your friend promises to visit. From now on, whenever the lamp is lit, someone will be waiting here.",
+        "zh-Hans": "你保留了信的秘密，也接过旧站的钥匙。朋友答应回来探望。从此灯亮起时，总有人在这里守候。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A Farewell Sent",
+        "zh-Hans": "替你告别"
+      },
+      "id": "endD",
+      "options": [],
+      "text": {
+        "en": "You drop the unopened letter into the postbox. Your friend can finally leave at peace. You did not choose whether he stayed; you simply helped him say goodbye.",
+        "zh-Hans": "你把未拆的信投入邮筒。朋友终于安心离开。这一次，你没有替他决定去留，只替他完成了告别。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "A letter stamped tomorrow holds back tonight's last train.",
+    "zh-Hans": "一封盖着明天邮戳的信，留住了今晚的末班车。"
+  },
+  "title": {
+    "en": "The Last Letter",
+    "zh-Hans": "末班来信"
+  }
+}

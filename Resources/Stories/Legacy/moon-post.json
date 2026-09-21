@@ -1,0 +1,213 @@
+{
+  "edition": 1,
+  "id": "moon-post",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "s2a",
+          "title": {
+            "en": "Search old street",
+            "zh-Hans": "沿旧街找"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s2b",
+          "title": {
+            "en": "Ask the envelope",
+            "zh-Hans": "询问信封"
+          }
+        }
+      ],
+      "text": {
+        "en": "You are tonight's moon postman. The last letter has no street number, only: 'To the one still waiting for me to come home.' Dawn is approaching.",
+        "zh-Hans": "你是今晚的月亮邮差。最后一封信没有门牌，只写着：送给还在等我回家的人。天就快亮了。"
+      }
+    },
+    {
+      "id": "s2a",
+      "options": [
+        {
+          "id": "A",
+          "next": "s3a",
+          "title": {
+            "en": "Follow the cat",
+            "zh-Hans": "跟着小猫"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s3b",
+          "title": {
+            "en": "Say the name",
+            "zh-Hans": "读出名字"
+          }
+        }
+      ],
+      "text": {
+        "en": "Only a low wall remains of the old street. A cat at its corner chases your shadow. Its brass collar tag bears the name faintly visible inside the envelope.",
+        "zh-Hans": "旧街只剩一面矮墙，墙角的小猫追着你的影子。它脖子上的铜牌，刻着信封里隐约透出的名字。"
+      }
+    },
+    {
+      "id": "s2b",
+      "options": [
+        {
+          "id": "A",
+          "next": "s3b",
+          "title": {
+            "en": "Say the name",
+            "zh-Hans": "读出名字"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s3a",
+          "title": {
+            "en": "Follow the cat",
+            "zh-Hans": "跟着小猫"
+          }
+        }
+      ],
+      "text": {
+        "en": "The envelope answers: 'I remember a bowl of hot soup, but not the way.' A cat in the distance suddenly looks up, as though someone has called it.",
+        "zh-Hans": "信封回答：我记得一碗热汤，却不记得路。远处的小猫突然抬头，像听见有人在叫它。"
+      }
+    },
+    {
+      "id": "s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "s4a",
+          "title": {
+            "en": "Hand her the letter",
+            "zh-Hans": "递上信封"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s4b",
+          "title": {
+            "en": "Ask of her home",
+            "zh-Hans": "问旧家的事"
+          }
+        }
+      ],
+      "text": {
+        "en": "The cat leads you to a new building. An old woman puts a bowl of water outside every day. Since moving, she has feared that her traveler won't find her here.",
+        "zh-Hans": "小猫带你来到新楼，老人每天都在门口放一碗水。她说，搬家以后，怕远行的人找不到这里。"
+      }
+    },
+    {
+      "id": "s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "s4b",
+          "title": {
+            "en": "Note the address",
+            "zh-Hans": "记下新地址"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s4a",
+          "title": {
+            "en": "Follow the aroma",
+            "zh-Hans": "循着汤香走"
+          }
+        }
+      ],
+      "text": {
+        "en": "When you speak the name, the low wall reflects the old kitchen. A bowl of soup waits on the table. You hear the woman say: 'The address changed. Home is still here.'",
+        "zh-Hans": "念出名字后，矮墙映出从前的厨房。桌上留着一碗汤，你听见老人说：地址变了，家还在。"
+      }
+    },
+    {
+      "id": "s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Warm the soup",
+            "zh-Hans": "陪她热汤"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Read the letter",
+            "zh-Hans": "先读来信"
+          }
+        }
+      ],
+      "text": {
+        "en": "Following the soup's aroma, you enter her new home. She recognizes the handwriting but hesitates to open the letter. 'Will you help me warm the soup first?'",
+        "zh-Hans": "你循着汤香走进新家，老人认出了信上的字。她迟迟没有拆信，问你能否先陪她把汤热一热？"
+      }
+    },
+    {
+      "id": "s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endB",
+          "title": {
+            "en": "Leave on the sill",
+            "zh-Hans": "放到窗台"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Knock and enter",
+            "zh-Hans": "敲门进去"
+          }
+        }
+      ],
+      "text": {
+        "en": "A new street number appears on the envelope. The woman waves from her window. There is still time to knock, or you can gently leave the letter on the sill.",
+        "zh-Hans": "信封上浮现出新的门牌。窗口的老人向你招手，你还来得及敲门，也可以把信轻放在窗台。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Warm Soup",
+        "zh-Hans": "一碗热汤"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "Only after sharing the hot soup does she slowly unfold the letter. Before dawn, you finally understand that a postman delivers more than messages on paper.",
+        "zh-Hans": "你陪老人喝完热汤，她才慢慢展开信。天亮前，你终于懂得，邮差送到的不只是纸上的消息。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A New Address",
+        "zh-Hans": "新的门牌"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "Morning lights the new address on the envelope. After reading the letter, she polishes her door number until it shines. Her traveler will never mistake the way home again.",
+        "zh-Hans": "晨光照亮信封上的新地址。老人读完信，把门牌擦得很亮。从此远行的人，再也不会找错家。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "Tonight's last letter is addressed to a home that no longer stands.",
+    "zh-Hans": "今晚最后一封信，收件地址是已经拆掉的家。"
+  },
+  "title": {
+    "en": "Moon Post",
+    "zh-Hans": "月亮邮差"
+  }
+}

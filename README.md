@@ -24,8 +24,11 @@ Read a little, make a choice, and see where it leads. TinyStory is a branching-s
 - Sources/StoryWidget.swift：Widget 入口、App Intents。
 - Sources/WidgetReadingLayout.swift：共享小组件布局。
 - Sources/Story.swift：故事、进度、存储与分支模型。
-- Sources/StoryLanguage.swift、EnglishText.swift：语言与英文内容。
-- Resources：故事封面、中文和英文本地化资源。
+- Sources/StoryContent.swift：加载故事资源，校验节点和翻译，兼容历史快照。
+- Sources/StoryLanguage.swift：语言选择、界面本地化与正文分页。
+- Resources/Stories：六篇故事的中英文内容和分支；Legacy 保存旧版本内容。
+- Resources/Localizable.xcstrings：界面文字的中英文翻译。
+- Resources/StoryArt.xcassets：故事封面与 App 图标。
 - AppInfo.plist、WidgetInfo.plist、Shared.entitlements：应用与扩展配置。
 
 The Swift sources cover the app screens, widget actions and layout, story state, persistence, and translation. Resources contains the story covers and localization files.
@@ -45,3 +48,24 @@ For a physical device, configure signing for both targets and use the same App G
 使用 Swift、SwiftUI、WidgetKit 和 App Intents，无第三方依赖。主 App 负责故事与进度管理，小组件负责阅读和选择。共享存档使用文件锁和原子写入，操作时检查轮次、节点与页码，避免旧按钮重复推进剧情。
 
 Built with Swift, SwiftUI, WidgetKit, and App Intents, with no third-party dependencies. The app manages stories and progress; the widget handles reading and choices. Shared saves use file locking and atomic writes. Actions check the current run, node, and page to prevent stale buttons from advancing the story again.
+
+## 编辑故事 / Editing stories
+
+每篇故事使用一个 JSON 文件，中英文写在同一个节点里，共用分支关系：
+
+| 文件 / File | 故事 / Story |
+| --- | --- |
+| `Resources/Stories/last-letter.json` | 末班来信 / The Last Letter |
+| `Resources/Stories/rain-shop.json` | 借雨小店 |
+| `Resources/Stories/moon-post.json` | 月亮邮差 |
+| `Resources/Stories/sea-radio.json` | 海边电台 |
+| `Resources/Stories/cloud-tailor.json` | 补云的人 |
+| `Resources/Stories/rain-score.json` | 雨夜失踪的曲谱 |
+
+`title`、`summary`、节点正文和选项标题都包含 `zh-Hans` 与 `en`。节点使用固定 `id`，选项的 `next` 指向下一个节点。`catalog.json` 决定书架顺序。调整文案时同步校对两种语言；不要随意修改现有 ID 或旧版文件，否则会影响存档。
+
+Each JSON file holds both languages and one shared branching graph. Text fields contain `zh-Hans` and `en`; option destinations refer to stable node IDs. `catalog.json` controls library order. Keep both languages in sync and preserve existing IDs and legacy content for saved progress.
+
+`Stories/Legacy/` 保留第一版五篇故事；其中 `snapshot-translations.json` 保存历史正文的英文对应，用于回顾旧旅程。界面按钮、标签等在 Xcode 的 `Localizable.xcstrings` 中编辑。JSON 修改后需重新构建，App 与 Widget 都会打包同一份内容。
+
+`Stories/Legacy/` preserves the five first-edition stories. Its `snapshot-translations.json` keeps translations for historical journey text. Edit interface labels in `Localizable.xcstrings`. Rebuild after changing resources; both targets bundle the same story content.

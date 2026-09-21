@@ -1,0 +1,213 @@
+{
+  "edition": 1,
+  "id": "sea-radio",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "s2a",
+          "title": {
+            "en": "Answer the voice",
+            "zh-Hans": "回应声音"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s2b",
+          "title": {
+            "en": "Read the log",
+            "zh-Hans": "查看日志"
+          }
+        }
+      ],
+      "text": {
+        "en": "While tidying the long-silent coastal radio station, you hear a request through the headphones: 'Could you play that song once more?' No incoming call appears on the screen.",
+        "zh-Hans": "你收拾停播的海边电台时，耳机里响起一个请求：能再放一遍那首歌吗？屏幕没有显示来电。"
+      }
+    },
+    {
+      "id": "s2a",
+      "options": [
+        {
+          "id": "A",
+          "next": "s3a",
+          "title": {
+            "en": "Tune in",
+            "zh-Hans": "调到旧频率"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s3b",
+          "title": {
+            "en": "Ask the boat name",
+            "zh-Hans": "询问船名"
+          }
+        }
+      ],
+      "text": {
+        "en": "The caller says they are sailing home but cannot recognize the shore lights. You find an old sea chart with a long-abandoned radio frequency written in its corner.",
+        "zh-Hans": "对方说自己正在返航，却认不出岸上的灯。你找到旧海图，图角记着一组早已停用的频率。"
+      }
+    },
+    {
+      "id": "s2b",
+      "options": [
+        {
+          "id": "A",
+          "next": "s3b",
+          "title": {
+            "en": "Look up the boat",
+            "zh-Hans": "查询船名"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s3a",
+          "title": {
+            "en": "Tune in",
+            "zh-Hans": "调到旧频率"
+          }
+        }
+      ],
+      "text": {
+        "en": "The log's last page names a boat that lost contact. A song request is tucked beside it; on its back are an old frequency and the captain's signature.",
+        "zh-Hans": "日志最后一页记着一艘失联的小船。旁边夹着点歌单，背面是一组旧频率和船长的签名。"
+      }
+    },
+    {
+      "id": "s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "s4a",
+          "title": {
+            "en": "Air the recording",
+            "zh-Hans": "播出录音"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s4b",
+          "title": {
+            "en": "Finish the song",
+            "zh-Hans": "补完那首歌"
+          }
+        }
+      ],
+      "text": {
+        "en": "On the old frequency, you hear a recording of a young captain calling for help. It ends with an interrupted song. You can broadcast his voice, or finish that song.",
+        "zh-Hans": "旧频率里传来年轻船长的求援录音，结尾是一首断掉的歌。你可以播出这段声音，也可以补完那首歌。"
+      }
+    },
+    {
+      "id": "s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "s4b",
+          "title": {
+            "en": "Invite the keeper",
+            "zh-Hans": "请他来电台"
+          }
+        },
+        {
+          "id": "B",
+          "next": "s4a",
+          "title": {
+            "en": "Play the song",
+            "zh-Hans": "播放那首歌"
+          }
+        }
+      ],
+      "text": {
+        "en": "The retired lighthouse keeper recognizes the boat's name. Its captain came home safely, he says. But the person who requested a song for him never heard his thanks.",
+        "zh-Hans": "退休的守塔人认出船名，说船长已经平安归来。只是当年为他点歌的人，没听到那句谢谢。"
+      }
+    },
+    {
+      "id": "s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Switch on the mic",
+            "zh-Hans": "打开话筒"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Play music first",
+            "zh-Hans": "先放音乐"
+          }
+        }
+      ],
+      "text": {
+        "en": "Your broadcast brings the keeper hurrying to the station. He says he was that captain. As the microphone lights up, he asks: 'Is anyone still listening?'",
+        "zh-Hans": "广播惊动了守塔人，他赶到电台，说自己就是当年的船长。麦克风亮起来，他问：还有人在听吗？"
+      }
+    },
+    {
+      "id": "s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endB",
+          "title": {
+            "en": "Let it finish",
+            "zh-Hans": "让歌播完"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Pass him the call",
+            "zh-Hans": "把电话给他"
+          }
+        }
+      ],
+      "text": {
+        "en": "The keeper arrives, recognizes the song, and admits he was the captain. Just then, the requester calls: 'Let me hear it through. Or we could talk.'",
+        "zh-Hans": "守塔人来到电台，认出那首歌，承认自己就是船长。此时点歌人打来电话：让我听完，也可以聊聊。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A Late Thank You",
+        "zh-Hans": "迟到的谢谢"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "At the microphone, the captain gives his long-delayed thanks. A laugh comes down the line: 'I always knew you would return.' The harbor lights come on one by one.",
+        "zh-Hans": "船长对着话筒说出迟到多年的谢谢。电话那头笑了：我一直知道你会回来。港口的灯逐盏亮起。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Played for You",
+        "zh-Hans": "为你重播"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "You let the whole song play quietly to its end. The next day, a box of old tapes appears at the station door. A note says: 'Next time, please request a song for me too.'",
+        "zh-Hans": "你让整首歌安静地播完。第二天，电台门口多了一盒旧磁带，上面写着：下次，也请为我点歌。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "A long-silent radio station receives a song request from the sea.",
+    "zh-Hans": "停播多年的电台，收到一条来自海上的点歌。"
+  },
+  "title": {
+    "en": "Coastal Radio",
+    "zh-Hans": "海边电台"
+  }
+}

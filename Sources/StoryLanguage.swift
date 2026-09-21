@@ -17,9 +17,14 @@ enum StoryLanguage: String, Codable, CaseIterable {
 }
 struct StoryLocalizer {
     let language: StoryLanguage
+    private var interfaceBundle: Bundle {
+        guard let path = Bundle.main.path(forResource: "en", ofType: "lproj"),
+              let bundle = Bundle(path: path) else { return .main }
+        return bundle
+    }
     func callAsFunction(_ source: String) -> String {
         guard language.resolved() == .english else { return source }
-        return EnglishText.stories[source] ?? EnglishText.interface[source] ?? source
+        return StoryContent.translations[source] ?? interfaceBundle.localizedString(forKey: source, value: source, table: nil)
     }
     func callAsFunction(_ chinese: String, _ english: String) -> String {
         language.resolved() == .english ? english : chinese

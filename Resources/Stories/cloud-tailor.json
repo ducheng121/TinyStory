@@ -1,0 +1,337 @@
+{
+  "edition": 2,
+  "id": "cloud-tailor",
+  "nodes": [
+    {
+      "id": "start",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s2a",
+          "title": {
+            "en": "A happy memory",
+            "zh-Hans": "快乐的回忆"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s2b",
+          "title": {
+            "en": "A regret",
+            "zh-Hans": "遗憾的回忆"
+          }
+        }
+      ],
+      "text": {
+        "en": "At dawn, a hole opens in the clouds above the city. The cloud mender gives you a needle and thread: 'The patch needs a memory. Which one will you choose?'",
+        "zh-Hans": "清晨，城市上空的云破了一个洞。补云师递给你针线：要用一段回忆作补丁，你愿意挑哪一段？"
+      }
+    },
+    {
+      "id": "a-s2a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s3a",
+          "title": {
+            "en": "Follow the kite",
+            "zh-Hans": "追寻风筝"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s3b",
+          "title": {
+            "en": "Find your friend",
+            "zh-Hans": "寻找旧友"
+          }
+        }
+      ],
+      "text": {
+        "en": "You remember the kite you flew as a child, and the spool becomes golden thread. The mender says to find the kite first, or ask the person waiting for you.",
+        "zh-Hans": "你想起小时候放飞的风筝，线轴变成一团金线。补云师说，先找到风筝，或者问问等你的人。"
+      }
+    },
+    {
+      "id": "a-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4a",
+          "title": {
+            "en": "Take the wishes",
+            "zh-Hans": "取下愿望"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4b",
+          "title": {
+            "en": "Call your friend",
+            "zh-Hans": "叫朋友来看"
+          }
+        }
+      ],
+      "text": {
+        "en": "The kite is caught on a roof. Tied to its tail are wishes you and your friend wrote. The paper has faded, but your promise to travel together is still clear.",
+        "zh-Hans": "风筝挂在屋顶，尾巴上系着你和朋友写下的愿望。纸已经褪色，但约好一起旅行的字还很清楚。"
+      }
+    },
+    {
+      "id": "a-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "a-s4b",
+          "title": {
+            "en": "Plan the trip",
+            "zh-Hans": "约好出发"
+          }
+        },
+        {
+          "id": "B",
+          "next": "a-s4a",
+          "title": {
+            "en": "Mend together",
+            "zh-Hans": "一起补云"
+          }
+        }
+      ],
+      "text": {
+        "en": "Your old friend brings out the other half of the spool, saying it has been waiting for you. You both laugh. Neither of you has truly forgotten the promise all these years.",
+        "zh-Hans": "旧友拿出另一半线轴，说一直等你来取。你们都笑了，原来这些年，谁也没有真正忘记约定。"
+      }
+    },
+    {
+      "id": "a-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endA",
+          "title": {
+            "en": "Stitch the sky",
+            "zh-Hans": "缝进天空"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endB",
+          "title": {
+            "en": "Take them along",
+            "zh-Hans": "带着出发"
+          }
+        }
+      ],
+      "text": {
+        "en": "You reunite with your friend and your old wishes, joining the threads. The mender asks: 'Stitch the wishes into the sky, or take them with you and set out again?'",
+        "zh-Hans": "你带着旧愿望与朋友会合，接好两段线。补云师问，要把愿望缝进天空，还是带着它重新出发？"
+      }
+    },
+    {
+      "id": "a-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endB",
+          "title": {
+            "en": "Walk the route",
+            "zh-Hans": "走完旧路"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endA",
+          "title": {
+            "en": "Leave a sign",
+            "zh-Hans": "留下路标"
+          }
+        }
+      ],
+      "text": {
+        "en": "Your friend rushes over to help mend the cloud, then shoulders a bag. 'Shall we finish our promised old route, or first leave a sign in the clouds where we can meet?'",
+        "zh-Hans": "朋友赶来帮你缝好云洞，随后背起行囊：要一起走完约好的旧路，还是先在云上留下见面的路标？"
+      }
+    },
+    {
+      "id": "b-s2b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s3b",
+          "title": {
+            "en": "Find your friend",
+            "zh-Hans": "寻找旧友"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s3a",
+          "title": {
+            "en": "Follow the kite",
+            "zh-Hans": "追寻风筝"
+          }
+        }
+      ],
+      "text": {
+        "en": "You remember an apology you never spoke, and blue thread appears in your palm. Your old friend lives beyond the hole in the clouds. A kite is flying that way.",
+        "zh-Hans": "你想起一次没有说出口的道歉，掌心出现蓝线。旧友住在云洞另一边，一只风筝正朝那里飞。"
+      }
+    },
+    {
+      "id": "b-s3a",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4a",
+          "title": {
+            "en": "Take the wishes",
+            "zh-Hans": "取下愿望"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4b",
+          "title": {
+            "en": "Call your friend",
+            "zh-Hans": "叫朋友来看"
+          }
+        }
+      ],
+      "text": {
+        "en": "The kite is caught on a roof. Tied to its tail are wishes you and your friend wrote. The paper has faded, but your promise to travel together is still clear.",
+        "zh-Hans": "风筝挂在屋顶，尾巴上系着你和朋友写下的愿望。纸已经褪色，但约好一起旅行的字还很清楚。"
+      }
+    },
+    {
+      "id": "b-s3b",
+      "options": [
+        {
+          "id": "A",
+          "next": "b-s4b",
+          "title": {
+            "en": "Plan the trip",
+            "zh-Hans": "约好出发"
+          }
+        },
+        {
+          "id": "B",
+          "next": "b-s4a",
+          "title": {
+            "en": "Mend together",
+            "zh-Hans": "一起补云"
+          }
+        }
+      ],
+      "text": {
+        "en": "Your old friend brings out the other half of the spool, saying it has been waiting for you. You both laugh. Neither of you has truly forgotten the promise all these years.",
+        "zh-Hans": "旧友拿出另一半线轴，说一直等你来取。你们都笑了，原来这些年，谁也没有真正忘记约定。"
+      }
+    },
+    {
+      "id": "b-s4a",
+      "options": [
+        {
+          "id": "A",
+          "next": "endC",
+          "title": {
+            "en": "Untie the knot",
+            "zh-Hans": "解开线结"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endD",
+          "title": {
+            "en": "Keep the reminder",
+            "zh-Hans": "留下记号"
+          }
+        }
+      ],
+      "text": {
+        "en": "The regret you chose still knots the thread. After hearing your apology, your friend is willing to untie it, or leave it as a sign never to break your promise again.",
+        "zh-Hans": "最初那段遗憾仍缠在线上。朋友听完你的道歉，愿意把结解开，也愿意把它留作不再失约的记号。"
+      }
+    },
+    {
+      "id": "b-s4b",
+      "options": [
+        {
+          "id": "A",
+          "next": "endD",
+          "title": {
+            "en": "Keep the knot",
+            "zh-Hans": "留下线结"
+          }
+        },
+        {
+          "id": "B",
+          "next": "endC",
+          "title": {
+            "en": "Undo it yourself",
+            "zh-Hans": "亲手解开"
+          }
+        }
+      ],
+      "text": {
+        "en": "Your friend points to the knot in the blue thread and recalls the trip when you never arrived. This time, you can keep the knot as a reminder, or undo it yourself.",
+        "zh-Hans": "朋友指着蓝线上的结，说起那次没等到你的旅行。这一次，你可以留下结作提醒，或亲手把它解开。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A Sign in the Sky",
+        "zh-Hans": "天空的路标"
+      },
+      "id": "endA",
+      "options": [],
+      "text": {
+        "en": "A kite's shape appears in the clouds. You promise to meet here every year. A glance upward will lead you to the memory of a promise no longer broken.",
+        "zh-Hans": "云上多了一只风筝的形状。你们约定每年在这里见面，抬头就能找到那段不再失约的时光。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "Setting Out",
+        "zh-Hans": "重新出发"
+      },
+      "id": "endB",
+      "options": [],
+      "text": {
+        "en": "You pack the spool and walk to the station with your friend. Morning light gently patches the cloud. The unfinished wish finally has a new page.",
+        "zh-Hans": "你把线轴装进行囊，和朋友走向车站。云洞被晨光轻轻补上，未完成的愿望终于有了下一页。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "An Untied Knot",
+        "zh-Hans": "解开的心结"
+      },
+      "id": "endC",
+      "options": [],
+      "text": {
+        "en": "You finish your long-delayed apology. Your friend holds your hand as you untie the blue thread. The cloud's seam lies flat; you can finally set out without that regret.",
+        "zh-Hans": "你说完迟到的道歉，朋友握着你的手解开蓝线。云缝平整了，你们终于不用带着那次遗憾出发。"
+      }
+    },
+    {
+      "endingTitle": {
+        "en": "A Promise Kept",
+        "zh-Hans": "不再失约"
+      },
+      "id": "endD",
+      "options": [],
+      "text": {
+        "en": "You leave the knot in the clouds and agree to visit it before every trip. The regret has not vanished, but it has become a reminder to honor your promises.",
+        "zh-Hans": "你们把线结留在云上，约好每次出发前都来看看。遗憾没有消失，却成了认真赴约的提醒。"
+      }
+    }
+  ],
+  "summary": {
+    "en": "A hole opens in the sky. Two memories could mend it.",
+    "zh-Hans": "城市上空破了一个洞，修补材料只有两段回忆。"
+  },
+  "title": {
+    "en": "The Cloud Mender",
+    "zh-Hans": "补云的人"
+  }
+}
